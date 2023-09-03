@@ -1,0 +1,30 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package grpc;
+option java_package = "com.example.grpc.roomservice";
+
+message CreateRoomRequest {
+  string name = 1;
+  int32 capacity = 2;
+  int64 host_id = 3;
+}
+message RoomResponse {
+  bool success = 1;
+  int64 id = 2;
+  string name = 3;
+  int32 capacity = 4;
+  int64 hostId = 5;
+  int64 count = 6;
+}
+message Rooms {
+  repeated RoomResponse rooms = 1;
+}
+message VoidMessage {}
+
+service RoomService {
+  rpc createRoom(CreateRoomRequest) returns (RoomResponse) {};
+  rpc getAllRooms(VoidMessage) returns (Rooms) {};
+
+}
+
+

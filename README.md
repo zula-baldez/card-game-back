@@ -1,0 +1,1 @@
+Second version of my card game. All code is redesigned and rewrote to kotlin. I used this project to practice kotlin a bit and test its features. Authorization and room choose part works, but the game itself is still in progress.
